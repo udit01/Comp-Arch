@@ -1,5 +1,5 @@
 
-
+// make a do while from next time
 i = 0;
 while(i<count){
     j = i+1;
