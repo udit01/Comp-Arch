@@ -1,0 +1,14 @@
+
+
+i = 0;
+while(i<count){
+    j = i+1;
+    while(j<count){
+        if( a[i] > a[j] ){
+            swap( a[i] , a[j] ) ;
+        }
+        j++;//move the pointer forward
+    }
+    i++;//move the pointer forward
+}
+
