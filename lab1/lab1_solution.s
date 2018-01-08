@@ -1,4 +1,4 @@
-@@@ Perform a sort of array ? (STDOUT)
+@@@ Perform a sort of array ? 
 
 	.equ SWI_Exit, 0x11
     .data
@@ -15,6 +15,7 @@
 
 
 @@@ This code assumes that count or the value of r5 is atleast 2
+@@@ as to sort you must have atleast 2 numbers right?
 _start:
         @instead of first instruction it should be preinitialized with the value of count
         @ldr    r0, #count	    @ R0 = Address a[0]
@@ -37,11 +38,11 @@ incj:   add     r1, r1, #4      @ j-address jump by 4 bytes
         
         cmp     r1, r5          @ somewhat wrong as 
                                 @ while condition has to be checked before
-        blt     w2
+        blt     w2              @ if j<count then loop
 
-        add     r0, r0, #4
+        add     r0, r0, #4      
 
         cmp     r0, r6          @if less than after i's increment then branch to w
-        btl     w               
+        btl     w               @if i < count-1 then loop
 
         swi     SWI_Exit	    @ invoke syscall for exit
